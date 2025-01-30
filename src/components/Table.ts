@@ -35,13 +35,13 @@ export class Table extends BaseComponent<TableState> {
         });
     }
 
-    private handleEdit = (id: number) => {
-        console.log(`[Table] Handling edit for row:`, id);
-        const rowData = this.state.data.find(row => row.id === id);
-        if (rowData) {
-            this.onEdit(rowData, id);
-        }
-    };
+    // private handleEdit = (id: number) => {
+    //     console.log(`[Table] Handling edit for row:`, id);
+    //     const rowData = this.state.data.find(row => row.id === id);
+    //     if (rowData) {
+    //         this.onEdit(rowData, id);
+    //     }
+    // };
 
     protected render(): void {
         this.cleanupEventListeners();
