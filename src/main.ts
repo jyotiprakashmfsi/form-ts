@@ -1,5 +1,5 @@
 import { App } from './App';
-// import './style.css';
+// import './App.css';
 
 window.addEventListener('DOMContentLoaded', () => {
     const appContainer = document.createElement('div');
@@ -9,6 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
     try {
         new App('app-root');
     } catch (error) {
-        console.error('Failed to initialize app:', error);
+        console.error('Failed to initialize:', error);
     }
 });

@@ -33,7 +33,7 @@ export class StateManager {
             id
         };
         this.state.formRecords = [...this.state.formRecords, newRecord];
-        console.log('[StateManager] Updated records after add:', this.state.formRecords);
+        console.log('[StateManager] Updated after add:', this.state.formRecords);
         return id;
     }
 
@@ -42,7 +42,7 @@ export class StateManager {
         this.state.formRecords = this.state.formRecords.map(record => 
             record.id === id ? { ...data, id } : record
         );
-        console.log('[StateManager] Updated records after update:', this.state.formRecords);
+        console.log('[StateManager] records after update:', this.state.formRecords);
     }
 
     public getFormRecords(): (FormData & { id: number })[] {
@@ -50,10 +50,9 @@ export class StateManager {
     }
 
     public setEditingRecord(id: number): FormData | null {
-        console.log('[StateManager] Setting editing record:', id);
         console.log('[StateManager] Current records:', this.state.formRecords);
         const record = this.state.formRecords.find(r => r.id === id);
-        console.log('[StateManager] Found record:', record);
+        console.log('[StateManager] Found:', record);
         
         if (record) {
             this.state.currentEditingId = id;
@@ -64,7 +63,6 @@ export class StateManager {
     }
 
     public clearEditingState(): void {
-        console.log('[StateManager] Clearing editing state');
         this.state.currentEditingId = null;
         this.state.currentFormData = null;
     }

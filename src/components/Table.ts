@@ -9,7 +9,6 @@ export class Table extends BaseComponent<TableState> {
     private onEdit: (data: FormData, id: number) => void;
 
     constructor(containerId: string, onEdit: (data: FormData, id: number) => void) {
-        console.log(`[Table] Initializing table component`);
         super(containerId);
         this.onEdit = onEdit;
         this.state = {
@@ -83,7 +82,6 @@ export class Table extends BaseComponent<TableState> {
             </div>
         `;
 
-        // Add event listeners for edit buttons
         const editButtons = this.element.querySelectorAll('.edit-btn');
         editButtons.forEach(button => {
             this.addEventListenerWithCleanup(

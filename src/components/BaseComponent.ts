@@ -5,11 +5,11 @@ export abstract class BaseComponent<T = {}> {
     private eventListeners: Array<{ element: HTMLElement; type: string; listener: EventListener }> = [];
 
     constructor(containerId: string) {
-        console.log(`[BaseComponent] Initializing component with container ID: ${containerId}`);
+        console.log(`[BaseComponent] Initializing ID: ${containerId}`);
         this.containerId = containerId;
         const container = document.getElementById(containerId);
         if (!container) {
-            throw new Error(`Container with id ${containerId} not found`);
+            throw new Error(`Container id ${containerId} not found`);
         }
         this.element = container;
         this.state = {} as T;
@@ -29,7 +29,6 @@ export abstract class BaseComponent<T = {}> {
         type: string,
         listener: EventListener
     ) {
-        console.log(`[BaseComponent] Adding event listener: ${type}`);
         element.addEventListener(type, listener);
         this.eventListeners.push({ element, type, listener });
     }
@@ -43,7 +42,6 @@ export abstract class BaseComponent<T = {}> {
     }
 
     protected mount(): void {
-        console.log(`[BaseComponent] Mounting component`);
         this.render();
     }
 

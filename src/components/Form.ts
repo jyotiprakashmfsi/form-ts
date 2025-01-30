@@ -17,7 +17,6 @@ export class Form extends BaseComponent<FormState> {
     private onSubmit: (data: FormData, editingId: number | null) => void;
 
     constructor(containerId: string, onSubmit: (data: FormData, editingId: number | null) => void) {
-        console.log(`[Form] Initializing form component`);
         super(containerId);
         this.onSubmit = onSubmit;
         this.state = {
@@ -29,12 +28,12 @@ export class Form extends BaseComponent<FormState> {
             isEditing: false,
             editingId: null
         };
-        console.log(`[Form] Initial form state:`, this.state);
+        console.log(`[Form] Initialstate:`, this.state);
         this.mount();
     }
 
     public setEditData(data: FormData, id: number) {
-        console.log(`[Form] Setting edit data:`, { data, id });
+        console.log(`[Form] Setting data:`, { data, id });
         this.setState({
             formData: { ...data },
             isEditing: true,
@@ -43,7 +42,6 @@ export class Form extends BaseComponent<FormState> {
     }
 
     public clearForm() {
-        console.log(`[Form] Clearing form`);
         this.setState({
             formData: {
                 name: '',
