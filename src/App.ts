@@ -48,10 +48,10 @@ export class App extends BaseComponent {
         
         const formData = this.stateManager.setEditingRecord(id);
         if (formData) {
-            console.log(`[App] Setting form data for edit:`, { formData, id });
+            console.log(`Setting form data for edit:`, { formData, id });
             this.form.setEditData({ ...formData }, id);
         } else {
-            console.error(`[App] Failed to set editing record for id:`, id);
+            console.error(`[App] Failed to set editing for id:`, id);
         }
     };
 

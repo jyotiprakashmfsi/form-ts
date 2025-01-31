@@ -13,7 +13,7 @@ export abstract class BaseComponent<T = {}> {
         }
         this.element = container;
         this.state = {} as T;
-        console.log(`[BaseComponent] Initial state:`, this.state);
+        console.log(`Initial state:`, this.state);
     }
 
     protected abstract render(): void;
@@ -34,7 +34,7 @@ export abstract class BaseComponent<T = {}> {
     }
 
     protected cleanupEventListeners() {
-        console.log(`[BaseComponent] Removing all event listeners`);
+        console.log(`Removing all event listeners`);
         this.eventListeners.forEach(({ element, type, listener }) => {
             element.removeEventListener(type, listener);
         });

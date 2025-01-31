@@ -1,5 +1,5 @@
 import { App } from './App';
-// import './App.css';
+import './styles.css';
 
 window.addEventListener('DOMContentLoaded', () => {
     const appContainer = document.createElement('div');

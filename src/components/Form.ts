@@ -33,7 +33,7 @@ export class Form extends BaseComponent<FormState> {
     }
 
     public setEditData(data: FormData, id: number) {
-        console.log(`[Form] Setting data:`, { data, id });
+        console.log(`[setting data:`, { data, id });
         this.setState({
             formData: { ...data },
             isEditing: true,
