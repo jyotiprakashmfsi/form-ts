@@ -26,7 +26,6 @@ export class StateManager {
     }
 
     public addFormRecord(data: FormData): number {
-        console.log('[StateManager] Adding form record:', data);
         const id = Date.now();
         const newRecord = {
             ...data,
@@ -50,9 +49,8 @@ export class StateManager {
     }
 
     public setEditingRecord(id: number): FormData | null {
-        console.log('[StateManager] Current records:', this.state.formRecords);
         const record = this.state.formRecords.find(r => r.id === id);
-        console.log('[StateManager] Found:', record);
+        console.log('Found:', record);
         
         if (record) {
             this.state.currentEditingId = id;
